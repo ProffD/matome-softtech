@@ -1,0 +1,23 @@
+---
+const reasons = [
+	{ number: '01', title: 'Reliable', description: 'Technology that behaves predictably when your business depends on it.' },
+	{ number: '02', title: 'Innovative', description: 'Modern thinking applied to useful outcomes—not novelty for its own sake.' },
+	{ number: '03', title: 'Support', description: 'Real, responsive help from people who understand what you are building.' },
+	{ number: '04', title: 'South African Based', description: 'Local context, practical insight and solutions built closer to your reality.' },
+];
+---
+
+<section id="why-us" class="relative overflow-hidden bg-sky-50 py-20 sm:py-28">
+	<div class="absolute right-0 top-0 -z-0 size-96 translate-x-1/3 -translate-y-1/3 rounded-full bg-cyan-200/40 blur-3xl" aria-hidden="true"></div>
+	<div class="section-shell relative z-10 grid gap-14 lg:grid-cols-[.8fr_1.2fr] lg:items-center">
+		<div>
+			<p class="eyebrow text-sky-600">Why Matome</p>
+			<h2 class="mt-4 text-4xl font-black tracking-[-0.035em] text-slate-950 sm:text-5xl">Good software should feel like progress.</h2>
+			<p class="mt-6 text-lg leading-8 text-slate-600">We pair sound technology with grounded business thinking, so every solution is understandable, maintainable and ready for the real world.</p>
+			<div class="mt-8 inline-flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-lg shadow-sky-100"><span class="grid size-10 place-items-center rounded-xl bg-sky-500 text-white"><svg viewBox="0 0 24 24" class="size-5" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3c2 2.5 3 5.5 3 9s-1 6.5-3 9c-2-2.5-3-5.5-3-9s1-6.5 3-9Z"/></svg></span><span><span class="block text-xs font-bold uppercase tracking-wider text-slate-400">Built here</span><span class="font-extrabold text-slate-900">Made for South African business</span></span></div>
+		</div>
+		<div class="grid gap-4 sm:grid-cols-2">
+			{reasons.map((reason) => <article class="rounded-3xl border border-sky-100 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-xl hover:shadow-sky-100"><span class="text-xs font-black tracking-widest text-sky-500">{reason.number}</span><h3 class="mt-5 text-xl font-black text-slate-950">{reason.title}</h3><p class="mt-3 text-sm leading-6 text-slate-600">{reason.description}</p></article>)}
+		</div>
+	</div>
+</section>

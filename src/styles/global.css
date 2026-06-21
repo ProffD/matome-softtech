@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Aptos", "Segoe UI", Helvetica, Arial, sans-serif;
+	--color-brand-cyan: #08a9d6;
+	--color-brand-sky: #0ea5e9;
+	--color-brand-blue: #0284c7;
+	--color-brand-deep: #0369a1;
+}
+
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 6rem;
+}
+
+body {
+	margin: 0;
+	min-width: 320px;
+	min-height: 100vh;
+}
+
+::selection {
+	background: #082f49;
+	color: white;
+}
+
+.section-shell {
+	width: min(100% - 2rem, 76rem);
+	margin-inline: auto;
+}
+
+@media (min-width: 768px) {
+	.section-shell {
+		width: min(100% - 4rem, 76rem);
+	}
+}
+
+.eyebrow {
+	font-size: 0.75rem;
+	font-weight: 800;
+	letter-spacing: 0.18em;
+	text-transform: uppercase;
+}

@@ -1,0 +1,60 @@
+---
+const labourMetrics = [['Employees', '256'], ['Active Sites', '18'], ['Open Risks', '12'], ['Compliance', '98%']];
+const powerMetrics = [['Generators', '24'], ['Quote Requests', '5'], ['Fuel Status', 'OK'], ['Maintenance', '3']];
+---
+
+<section class="relative isolate overflow-hidden bg-gradient-to-br from-[#08A9D6] via-[#0EA5E9] to-[#0369A1] text-white">
+	<div class="absolute inset-0 -z-10 opacity-20" aria-hidden="true">
+		<svg class="h-full w-full" viewBox="0 0 1440 760" preserveAspectRatio="none" fill="none">
+			<circle cx="1210" cy="80" r="330" stroke="white"/><circle cx="1210" cy="80" r="240" stroke="white" opacity=".7"/>
+			<path d="M0 140C280 20 470 250 760 110S1210 40 1440 160M0 510C280 390 530 620 850 480s400-150 590-90" stroke="white" opacity=".4"/>
+		</svg>
+	</div>
+
+	<div class="section-shell grid min-h-[680px] items-center gap-12 pb-32 pt-16 lg:grid-cols-[0.92fr_1.08fr] lg:gap-6 lg:pb-36 lg:pt-20">
+		<div class="relative z-10 max-w-xl">
+			<div class="mb-7 inline-flex items-center gap-3 rounded-full border border-white/30 bg-white/10 px-4 py-2 backdrop-blur-sm">
+				<span class="relative flex size-2"><span class="absolute inline-flex size-full animate-ping rounded-full bg-white opacity-70"></span><span class="relative inline-flex size-2 rounded-full bg-white"></span></span>
+				<span class="eyebrow text-white">Matome SoftTech Solutions</span>
+			</div>
+			<h1 class="text-5xl font-black leading-[0.98] tracking-[-0.045em] sm:text-6xl lg:text-[4.45rem]">Smart Software<br /><span class="text-sky-950">for Growing Businesses</span></h1>
+			<p class="mt-7 max-w-lg text-base font-medium leading-7 text-sky-50 sm:text-lg">Build professional websites, manage workforce compliance, and access reliable backup power services through practical solutions built for South African businesses.</p>
+			<div class="mt-9 flex flex-wrap items-center gap-5">
+				<a href="/labourguard" class="group inline-flex items-center gap-3 rounded-full bg-slate-950 px-7 py-4 text-sm font-extrabold text-white shadow-xl shadow-sky-950/20 transition hover:-translate-y-1 hover:bg-white hover:text-sky-800 hover:shadow-2xl">Explore Our Solutions<svg viewBox="0 0 24 24" class="size-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+				<a href="/contact" class="text-sm font-bold text-white underline decoration-white/50 decoration-2 underline-offset-8 transition hover:decoration-white">Request a Demo</a>
+			</div>
+		</div>
+
+		<div class="relative mx-auto h-[610px] w-full max-w-[650px] sm:h-[650px] lg:mx-0 lg:h-[600px]" aria-label="Product dashboard previews">
+			<div class="absolute left-0 top-7 w-[76%] max-w-[380px] -rotate-[7deg] rounded-[2.25rem] border-[9px] border-slate-900 bg-slate-900 p-1 shadow-[0_30px_70px_rgba(3,39,65,0.35)] sm:left-5 sm:top-4 sm:w-[64%]">
+				<div class="overflow-hidden rounded-[1.45rem] bg-slate-50">
+					<div class="flex items-center justify-between border-b border-slate-200 bg-white px-4 py-3"><div class="flex items-center gap-2"><span class="grid size-7 place-items-center rounded-lg bg-blue-600 text-[10px] font-black text-white">LG</span><span class="text-xs font-black text-slate-900">labour<span class="text-blue-600">Guard</span></span></div><span class="size-2 rounded-full bg-emerald-400"></span></div>
+					<div class="p-4 sm:p-5">
+						<p class="text-[9px] font-extrabold uppercase tracking-[0.18em] text-blue-600">Live overview</p><h2 class="mt-1 text-base font-black text-slate-950 sm:text-lg">Workforce Compliance</h2>
+						<div class="mt-4 grid grid-cols-2 gap-2.5">{labourMetrics.map(([label, value], index) => <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm"><p class="text-[8px] font-bold uppercase tracking-wide text-slate-400 sm:text-[9px]">{label}</p><p class:list={['mt-1 text-lg font-black sm:text-xl', index === 3 ? 'text-blue-600' : 'text-slate-900']}>{value}</p></div>)}</div>
+						<div class="mt-4 rounded-xl bg-blue-50 p-3"><div class="mb-2 flex justify-between text-[8px] font-bold text-blue-900"><span>Compliance score</span><span>98%</span></div><div class="h-2 overflow-hidden rounded-full bg-blue-100"><div class="h-full w-[98%] rounded-full bg-blue-600"></div></div></div>
+					</div>
+				</div>
+			</div>
+
+			<div class="absolute bottom-3 right-0 z-10 w-[76%] max-w-[380px] rotate-[6deg] rounded-[2.25rem] border-[9px] border-slate-900 bg-slate-900 p-1 shadow-[0_35px_80px_rgba(3,39,65,0.42)] sm:bottom-2 sm:right-2 sm:w-[64%]">
+				<div class="overflow-hidden rounded-[1.45rem] bg-slate-50">
+					<div class="flex items-center justify-between border-b border-slate-200 bg-white px-4 py-3"><div class="flex items-center gap-2"><span class="grid size-7 place-items-center rounded-lg bg-emerald-500 text-[10px] font-black text-white">PG</span><span class="text-xs font-black text-slate-900">power<span class="text-emerald-500">Guard</span></span></div><span class="size-2 rounded-full bg-emerald-400"></span></div>
+					<div class="p-4 sm:p-5">
+						<p class="text-[9px] font-extrabold uppercase tracking-[0.18em] text-emerald-600">Power services</p><h2 class="mt-1 text-base font-black text-slate-950 sm:text-lg">Generator Hire & Backup Power</h2>
+						<div class="mt-4 grid grid-cols-2 gap-2.5">{powerMetrics.map(([label, value], index) => <div class="rounded-xl border border-slate-200 bg-white p-3 shadow-sm"><p class="text-[8px] font-bold uppercase tracking-wide text-slate-400 sm:text-[9px]">{label}</p><p class:list={['mt-1 text-lg font-black sm:text-xl', index === 2 ? 'text-emerald-500' : 'text-slate-900']}>{value}</p></div>)}</div>
+						<div class="mt-4 flex items-center gap-3 rounded-xl bg-emerald-50 p-3 text-[9px] font-bold text-emerald-900"><span class="grid size-7 place-items-center rounded-full bg-emerald-500 text-white"><svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="m5 13 4 4L19 7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Ready for hire, events and backup needs</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="absolute inset-x-0 bottom-0 h-24 overflow-hidden text-white" aria-hidden="true"><svg viewBox="0 0 1440 120" class="h-full w-full" preserveAspectRatio="none" fill="currentColor"><path d="M0 75C250 15 390 105 690 62c280-40 480-20 750 25v33H0Z"/></svg></div>
+</section>
+
+<div class="relative z-10 -mt-8 pb-7">
+	<div class="section-shell flex flex-col items-center justify-between gap-4 rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-xl shadow-slate-200/50 sm:flex-row sm:px-7">
+		<div class="flex items-center gap-3"><div class="flex -space-x-2" aria-hidden="true">{['bg-sky-500','bg-blue-700','bg-emerald-500'].map((color) => <span class:list={['grid size-8 place-items-center rounded-full border-2 border-white', color]}><span class="size-2 rounded-full bg-white/80"></span></span>)}</div><p class="text-sm font-bold text-slate-700">Built for compliance, websites and power operations</p></div>
+		<div class="flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-sky-700"><svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3c2 2.5 3 5.5 3 9s-1 6.5-3 9c-2-2.5-3-5.5-3-9s1-6.5 3-9Z"/></svg>South African software solutions</div>
+	</div>
+</div>

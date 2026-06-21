@@ -1,0 +1,40 @@
+---
+interface Props {
+	eyebrow: string;
+	title: string;
+	description: string;
+	primaryLabel?: string;
+	primaryHref?: string;
+	secondaryLabel?: string;
+	secondaryHref?: string;
+}
+
+const {
+	eyebrow,
+	title,
+	description,
+	primaryLabel = 'Request a Demo',
+	primaryHref = '/contact',
+	secondaryLabel,
+	secondaryHref,
+} = Astro.props;
+---
+
+<section class="relative isolate overflow-hidden bg-gradient-to-br from-[#08A9D6] via-[#0EA5E9] to-[#0369A1] text-white">
+	<div class="absolute inset-0 -z-10 opacity-20" aria-hidden="true">
+		<svg class="h-full w-full" viewBox="0 0 1440 620" preserveAspectRatio="none" fill="none"><circle cx="1230" cy="40" r="330" stroke="white"/><circle cx="1230" cy="40" r="230" stroke="white"/><path d="M0 160C260 20 500 260 790 100s440-80 650 60M0 500c270-130 510 80 810-40 260-105 440-80 630-15" stroke="white" opacity=".5"/></svg>
+	</div>
+	<div class="section-shell grid min-h-[570px] items-center gap-12 pb-24 pt-16 lg:grid-cols-[.9fr_1.1fr] lg:pb-28 lg:pt-20">
+		<div class="max-w-2xl">
+			<p class="eyebrow text-sky-950">{eyebrow}</p>
+			<h1 class="mt-5 text-5xl font-black leading-[1.02] tracking-[-0.045em] sm:text-6xl">{title}</h1>
+			<p class="mt-6 max-w-xl text-lg leading-8 text-sky-50">{description}</p>
+			<div class="mt-9 flex flex-wrap items-center gap-5">
+				<a href={primaryHref} class="group inline-flex items-center gap-3 rounded-full bg-slate-950 px-7 py-4 text-sm font-extrabold text-white shadow-xl shadow-sky-950/20 transition hover:-translate-y-1 hover:bg-white hover:text-sky-800">{primaryLabel}<svg viewBox="0 0 24 24" class="size-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+				{secondaryLabel && secondaryHref && <a href={secondaryHref} class="text-sm font-bold text-white underline decoration-white/50 decoration-2 underline-offset-8 hover:decoration-white">{secondaryLabel}</a>}
+			</div>
+		</div>
+		<div class="relative min-h-[370px]"><slot /></div>
+	</div>
+	<div class="absolute inset-x-0 bottom-0 h-16 text-white" aria-hidden="true"><svg viewBox="0 0 1440 90" class="h-full w-full" preserveAspectRatio="none" fill="currentColor"><path d="M0 55c290-70 510 35 780-5 240-36 430-27 660 10v30H0Z"/></svg></div>
+</section>

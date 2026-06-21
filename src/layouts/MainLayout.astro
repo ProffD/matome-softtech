@@ -1,0 +1,35 @@
+---
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const {
+	title = 'Matome SoftTech Solutions | Practical software for growing businesses',
+	description = 'South African software and service solutions for workforce compliance, backup power and modern business websites.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="description" content={description} />
+		<meta name="theme-color" content="#08a9d6" />
+		<title>{title}</title>
+	</head>
+	<body class="bg-white text-slate-950 antialiased">
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<Footer />
+	</body>
+</html>

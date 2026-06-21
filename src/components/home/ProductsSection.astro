@@ -1,0 +1,90 @@
+---
+const products = [
+	{
+		id: 'labourguard',
+		name: 'LabourGuard',
+		tagline: 'Workforce. Safety. Compliance. All in One Platform.',
+		description: 'A complete workforce compliance system that keeps organisations on top of employee records, sites, safety and reporting.',
+		features: ['Employee management', 'Site and contractor management', 'Safety and incident reporting', 'Compliance tracking', 'Powerful reports and analytics'],
+		href: '/labourguard',
+		accent: 'blue',
+		metrics: [['Employees', '256'], ['Sites', '18'], ['Risks', '12'], ['Compliance', '98%']],
+	},
+	{
+		id: 'powerguard',
+		name: 'PowerGuard',
+		tagline: 'Generator Hire. LP Gas. Backup Power.',
+		description: 'Reliable generator hire, LP gas supply, backup power support, repairs and maintenance for homes, events and businesses.',
+		features: ['Generator hire', 'LP gas supply', 'Backup power support', 'Repairs and maintenance', 'Event, home and business power'],
+		href: '/powerguard',
+		accent: 'emerald',
+		metrics: [['Generators', '24'], ['Quotes', '5'], ['Due', '3'], ['Fuel', 'OK']],
+	},
+];
+---
+
+<section id="products" class="relative overflow-hidden bg-gradient-to-b from-white via-sky-50/50 to-white py-20 sm:py-28">
+	<div class="absolute left-1/2 top-0 -z-0 h-64 w-[46rem] -translate-x-1/2 rounded-full bg-sky-100/60 blur-3xl" aria-hidden="true"></div>
+	<div class="section-shell relative z-10">
+		<div class="mx-auto max-w-2xl text-center">
+			<p class="eyebrow text-sky-600">Our products</p>
+			<h2 class="mt-3 text-4xl font-black tracking-[-0.035em] text-slate-950 sm:text-5xl">Powerful Solutions. Real Impact.</h2>
+			<p class="mt-4 text-base leading-7 text-slate-600 sm:text-lg">Our products solve real operational challenges and bring efficiency, safety and control to your business.</p>
+		</div>
+
+		<div class="mt-12 grid gap-6 xl:grid-cols-2">
+			{products.map((product) => {
+				const blue = product.accent === 'blue';
+				return (
+					<article id={product.id} class:list={['group rounded-[1.75rem] border bg-white p-5 shadow-[0_16px_45px_rgba(15,23,42,.07)] transition duration-300 hover:-translate-y-1 hover:shadow-2xl sm:p-7', blue ? 'border-blue-100 hover:shadow-blue-100/80' : 'border-emerald-100 hover:shadow-emerald-100/80']}>
+						<div class="flex items-center gap-3">
+							<span class:list={['grid size-11 place-items-center rounded-2xl text-white shadow-lg', blue ? 'bg-gradient-to-br from-blue-500 to-blue-700 shadow-blue-200' : 'bg-gradient-to-br from-emerald-400 to-emerald-700 shadow-emerald-200']}>
+								{blue ? <svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 3 4.5 6v5.5c0 4.7 3.2 7.8 7.5 9.5 4.3-1.7 7.5-4.8 7.5-9.5V6L12 3Z"/><path d="m9 12 2 2 4-4" stroke-linecap="round" stroke-linejoin="round"/></svg> : <svg viewBox="0 0 24 24" class="size-6" fill="currentColor" aria-hidden="true"><path d="M13.2 2 5.8 13h5.1l-.8 9L18.3 10h-5.2l.1-8Z"/></svg>}
+							</span>
+							<h3 class:list={['text-2xl font-black tracking-tight sm:text-3xl', blue ? 'text-blue-800' : 'text-emerald-700']}>{product.name}</h3>
+						</div>
+
+						<div class="mt-7 grid gap-7 md:grid-cols-[.83fr_1.17fr] md:items-start">
+							<div>
+								<p class="text-lg font-black leading-snug text-slate-950">{product.tagline}</p>
+								<p class="mt-4 text-sm leading-6 text-slate-600">{product.description}</p>
+								<ul class="mt-5 space-y-2.5">
+									{product.features.map((feature) => <li class="flex items-start gap-2.5 text-xs font-semibold leading-5 text-slate-700 sm:text-sm"><span class:list={['mt-0.5 grid size-5 shrink-0 place-items-center rounded-full text-white', blue ? 'bg-blue-600' : 'bg-emerald-500']}><svg viewBox="0 0 24 24" class="size-3" fill="none" stroke="currentColor" stroke-width="3" aria-hidden="true"><path d="m6 12 4 4 8-8" stroke-linecap="round" stroke-linejoin="round"/></svg></span>{feature}</li>)}
+								</ul>
+								<a href={product.href} class:list={['mt-7 inline-flex items-center gap-2 rounded-lg border-2 px-5 py-3 text-sm font-extrabold transition hover:text-white', blue ? 'border-blue-600 text-blue-700 hover:bg-blue-600' : 'border-emerald-500 text-emerald-700 hover:bg-emerald-500']}>Learn More <svg viewBox="0 0 24 24" class="size-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+							</div>
+
+							<div class="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-xl shadow-slate-200/70 transition duration-300 group-hover:-translate-y-1">
+								<div class="flex h-9 items-center justify-between border-b border-slate-100 bg-white px-3">
+									<div class="flex items-center gap-1.5"><span class:list={['size-2 rounded-full', blue ? 'bg-blue-500' : 'bg-emerald-500']}></span><span class="text-[8px] font-black text-slate-700">{product.name}</span></div>
+									<div class="flex gap-1"><span class="size-1.5 rounded-full bg-slate-200"></span><span class="size-1.5 rounded-full bg-slate-200"></span><span class="size-1.5 rounded-full bg-slate-200"></span></div>
+								</div>
+								<div class="grid min-h-[310px] grid-cols-[3.6rem_1fr] bg-slate-50">
+									<div class:list={['p-2.5 text-white', blue ? 'bg-[#082f68]' : 'bg-[#063f38]']}>
+										<div class="mb-5 grid size-7 place-items-center rounded-lg bg-white/15 text-[8px] font-black">{blue ? 'LG' : 'PG'}</div>
+										<div class="space-y-2">{[0,1,2,3,4,5].map((item) => <div class:list={['flex h-7 items-center gap-1.5 rounded-md px-1.5', item === 0 ? 'bg-white/15' : '']}><span class="size-1.5 rounded-full bg-white/70"></span><span class="h-1 w-5 rounded-full bg-white/35"></span></div>)}</div>
+									</div>
+									<div class="p-3 sm:p-4">
+										<div class="flex items-center justify-between"><div><p class="text-[7px] font-bold uppercase tracking-wider text-slate-400">Dashboard</p><p class="mt-0.5 text-[10px] font-black text-slate-900">Operations overview</p></div><span class:list={['rounded-full px-2 py-1 text-[6px] font-black', blue ? 'bg-blue-50 text-blue-600' : 'bg-emerald-50 text-emerald-600']}>LIVE</span></div>
+										<div class="mt-3 grid grid-cols-4 gap-1.5">{product.metrics.map(([label, value], index) => <div class="rounded-lg border border-slate-100 bg-white p-2 shadow-sm"><p class="truncate text-[5px] font-bold uppercase text-slate-400">{label}</p><p class:list={['mt-1 text-xs font-black', index === 3 ? (blue ? 'text-blue-600' : 'text-emerald-600') : 'text-slate-900']}>{value}</p></div>)}</div>
+										<div class="mt-3 grid grid-cols-[1.1fr_.9fr] gap-2">
+											<div class="rounded-xl border border-slate-100 bg-white p-2.5 shadow-sm">
+												<div class="mb-3 flex items-center justify-between"><span class="text-[7px] font-black text-slate-800">{blue ? 'Recent incidents' : 'Generator status'}</span><span class="text-[5px] font-bold text-slate-400">Today</span></div>
+												<div class="space-y-2">{[70,88,55,76].map((width, index) => <div class="flex items-center gap-2"><span class:list={['size-2 rounded-full', index === 0 ? (blue ? 'bg-amber-400' : 'bg-emerald-500') : 'bg-slate-200']}></span><div class="flex-1"><div class="h-1 rounded-full bg-slate-100"><div class:list={['h-full rounded-full', blue ? 'bg-blue-400' : 'bg-emerald-400']} style={`width:${width}%`}></div></div></div></div>)}</div>
+											</div>
+											<div class="rounded-xl border border-slate-100 bg-white p-2.5 text-center shadow-sm">
+												<p class="text-[7px] font-black text-slate-800">{blue ? 'Compliance' : 'Fuel level'}</p>
+												<div class:list={['mx-auto mt-3 grid size-16 place-items-center rounded-full p-1.5', blue ? 'bg-[conic-gradient(#2563eb_0_98%,#e2e8f0_98%)]' : 'bg-[conic-gradient(#10b981_0_68%,#e2e8f0_68%)]']}><div class="grid size-full place-items-center rounded-full bg-white"><span class="text-sm font-black text-slate-900">{blue ? '98%' : '68%'}</span></div></div>
+											</div>
+										</div>
+										<div class="mt-2 rounded-xl border border-slate-100 bg-white p-2.5 shadow-sm"><div class="flex h-9 items-end gap-1.5">{[45,72,55,88,62,78,95,70].map((height) => <span class:list={['flex-1 rounded-t-sm', blue ? 'bg-blue-400' : 'bg-emerald-400']} style={`height:${height}%`}></span>)}</div></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</article>
+				);
+			})}
+		</div>
+	</div>
+</section>

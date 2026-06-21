@@ -1,0 +1,50 @@
+---
+import MainLayout from '../layouts/MainLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import Web3FormsHandler from '../components/Web3FormsHandler.astro';
+
+const web3formsAccessKey = import.meta.env.PUBLIC_WEB3FORMS_ACCESS_KEY ?? '';
+const redirectUrl = import.meta.env.PROD ? 'https://matomesofttech.co.za/thank-you' : 'http://localhost:4321/thank-you';
+---
+
+<MainLayout title="Contact | Matome SoftTech Solutions" description="Contact Matome SoftTech Solutions about websites, custom software, LabourGuard or a PowerGuard quote.">
+	<PageHero eyebrow="Contact us" title="Let’s solve the right problem." description="Tell us what your business needs to improve, what is getting in the way, or which Matome solution you would like to discuss." primaryLabel="Email Our Team" primaryHref="mailto:tbmatome@gmail.com" secondaryLabel="View Our Services" secondaryHref="/services">
+		<div class="absolute inset-x-0 top-1/2 mx-auto w-[90%] max-w-[470px] -translate-y-1/2 rotate-[3deg] rounded-[2rem] bg-white p-7 text-slate-950 shadow-[0_35px_80px_rgba(3,39,65,.38)] sm:p-9">
+			<div class="flex items-center gap-4"><span class="grid size-12 place-items-center rounded-2xl bg-sky-100 text-sky-600"><svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 6h18v12H3zM3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"/></svg></span><div><p class="text-xs font-black uppercase tracking-wider text-slate-400">Email</p><p class="mt-1 font-black">info@matomesofttech.co.za</p></div></div>
+			<div class="my-6 h-px bg-slate-200"></div>
+			<div class="flex items-center gap-4"><span class="grid size-12 place-items-center rounded-2xl bg-sky-100 text-sky-600"><svg viewBox="0 0 24 24" class="size-6" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18Z"/><path d="M3.6 9h16.8M3.6 15h16.8M12 3c2 2.5 3 5.5 3 9s-1 6.5-3 9c-2-2.5-3-5.5-3-9s1-6.5 3-9Z"/></svg></span><div><p class="text-xs font-black uppercase tracking-wider text-slate-400">Based in</p><p class="mt-1 font-black">South Africa</p></div></div>
+		</div>
+	</PageHero>
+
+	<section class="py-20 sm:py-28">
+		<div class="section-shell grid gap-12 lg:grid-cols-[.72fr_1.28fr]">
+			<div>
+				<p class="eyebrow text-sky-600">Start a conversation</p>
+				<h2 class="mt-4 text-4xl font-black tracking-[-.035em]">What can we help you move forward?</h2>
+				<p class="mt-5 leading-7 text-slate-600">Share a little context and we’ll get back to you about the best next step, whether that is a labourGuard demo, a powerGuard quote, a project discussion or straightforward technical guidance.</p>
+				<div class="mt-8 rounded-2xl bg-sky-50 p-5"><p class="text-sm font-black text-sky-900">Looking for a demo or quote?</p><p class="mt-2 text-sm leading-6 text-sky-800">Choose labourGuard or powerGuard in the form so we can tailor the conversation to your needs.</p></div>
+			</div>
+
+			<form action="https://api.web3forms.com/submit" method="POST" class="rounded-[2rem] border border-slate-200 bg-white p-6 shadow-xl shadow-slate-100 sm:p-9" data-static-form data-turnstile-compatible>
+				<input type="hidden" name="access_key" value={web3formsAccessKey} />
+				<input type="hidden" name="subject" value="New Matome SoftTech website enquiry" />
+				<input type="hidden" name="from_name" value="Matome SoftTech website" />
+				<input type="hidden" name="source" value="General Contact" />
+				<input type="hidden" name="product" value="General enquiry" />
+				<input type="hidden" name="redirect" value={redirectUrl} />
+				<input type="checkbox" name="botcheck" class="hidden" style="display:none;" tabindex="-1" autocomplete="off" />
+				<div class="grid gap-5 sm:grid-cols-2">
+					<label class="block"><span class="text-sm font-bold text-slate-700">Full name</span><input type="text" name="name" autocomplete="name" required class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-slate-950 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" placeholder="Your name" /></label>
+					<label class="block"><span class="text-sm font-bold text-slate-700">Business email</span><input type="email" name="email" autocomplete="email" required class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-slate-950 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" placeholder="you@company.co.za" /></label>
+					<label class="block"><span class="text-sm font-bold text-slate-700">Phone number</span><input type="tel" name="phone" autocomplete="tel" required class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-slate-950 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" placeholder="Your phone number" /></label>
+					<label class="block"><span class="text-sm font-bold text-slate-700">Company</span><input type="text" name="company" autocomplete="organization" class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-slate-950 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" placeholder="Company name" /></label>
+					<label class="block"><span class="text-sm font-bold text-slate-700">I’m interested in</span><select name="interest" required class="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-slate-950 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100"><option>labourGuard demo</option><option>powerGuard quote</option><option>Website development</option><option>Custom software</option><option>Other services</option></select></label>
+				</div>
+				<label class="mt-5 block"><span class="text-sm font-bold text-slate-700">How can we help?</span><textarea name="message" rows="5" required class="mt-2 w-full resize-y rounded-xl border border-slate-200 bg-slate-50 px-4 py-3.5 text-slate-950 outline-none transition focus:border-sky-500 focus:ring-4 focus:ring-sky-100" placeholder="Tell us about the problem, project, quote or demo you have in mind."></textarea></label>
+				<p class="mt-5 hidden text-sm font-semibold text-red-600" role="alert" aria-live="polite" data-form-status></p>
+				<button type="submit" data-submit-button class="mt-6 inline-flex items-center gap-3 rounded-full bg-slate-950 px-7 py-4 text-sm font-extrabold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-sky-700 disabled:cursor-not-allowed disabled:opacity-60"><span data-submit-label data-idle-label="Send Enquiry">Send Enquiry</span><svg viewBox="0 0 24 24" class="size-4" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+			</form>
+		</div>
+	</section>
+	<Web3FormsHandler />
+</MainLayout>

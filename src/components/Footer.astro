@@ -1,0 +1,20 @@
+---
+import BrandLogo from './BrandLogo.astro';
+
+const productLinks = [{ label: 'LabourGuard', href: '/labourguard' }, { label: 'PowerGuard', href: '/powerguard' }, { label: 'Business Websites', href: '/services' }];
+const companyLinks = [{ label: 'About', href: '/about' }, { label: 'Services', href: '/services' }, { label: 'Contact Us', href: '/contact' }];
+---
+
+<footer class="bg-slate-950 pt-16 text-white">
+	<div class="section-shell grid gap-12 border-b border-white/10 pb-14 md:grid-cols-[1.4fr_.6fr_.6fr]">
+		<div class="max-w-sm">
+			<a href="/" class="inline-block rounded-xl bg-white p-1" aria-label="Matome SoftTech Solutions home">
+				<BrandLogo class="h-auto w-[250px]" />
+			</a>
+			<p class="mt-6 text-sm leading-7 text-slate-400">Practical digital solutions for growing South African businesses—from the website out front to the systems powering work behind it.</p>
+		</div>
+		<div><h2 class="text-xs font-black uppercase tracking-[0.16em] text-sky-400">Solutions</h2><ul class="mt-5 space-y-3">{productLinks.map((link) => <li><a href={link.href} class="text-sm font-semibold text-slate-400 transition hover:text-white">{link.label}</a></li>)}</ul></div>
+		<div><h2 class="text-xs font-black uppercase tracking-[0.16em] text-sky-400">Company</h2><ul class="mt-5 space-y-3">{companyLinks.map((link) => <li><a href={link.href} class="text-sm font-semibold text-slate-400 transition hover:text-white">{link.label}</a></li>)}</ul></div>
+	</div>
+	<div class="section-shell flex flex-col gap-3 py-6 text-xs font-medium text-slate-500 sm:flex-row sm:items-center sm:justify-between"><p>© {new Date().getFullYear()} Matome SoftTech Solutions. All rights reserved.</p><p>Built for South African businesses.</p></div>
+</footer>
